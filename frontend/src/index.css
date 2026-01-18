@@ -1,0 +1,50 @@
+@import "tailwindcss";
+@plugin "daisyui";
+@custom-variant dark (&:where(.dark, .dark *));
+
+/* Hide default cursor when using mouse/trackpad (fine pointer) */
+@media (hover: hover) and (pointer: fine) {
+    * {
+        cursor: none !important;
+    }
+}
+
+/* Keep default cursor on touch devices */
+@media (hover: none) and (pointer: coarse) {
+    * {
+        cursor: auto !important;
+    }
+}
+/* Slow spinning animation for hero border ring */
+@keyframes spin-slow {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.animate-spin-slow {
+    animation: spin-slow 8s linear infinite;
+}
+
+/* Radial gradient for level up burst */
+@keyframes gradient-radial {
+    0% {
+        background: radial-gradient(
+            circle,
+            rgba(251, 191, 36, 0.8) 0%,
+            rgba(249, 115, 22, 0.6) 30%,
+            rgba(249, 115, 22, 0) 70%
+        );
+    }
+    100% {
+        background: radial-gradient(
+            circle,
+            rgba(251, 191, 36, 0) 0%,
+            rgba(249, 115, 22, 0) 30%,
+            rgba(249, 115, 22, 0) 70%
+        );
+    }
+}

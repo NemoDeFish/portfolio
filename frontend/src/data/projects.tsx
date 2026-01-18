@@ -1,0 +1,110 @@
+import { Globe, Monitor, Cpu, Sparkles } from "lucide-react";
+
+export interface Project {
+    id: string;
+    title: string;
+    description: string;
+    category: string;
+    tech: string[];
+    image: string;
+    liveDemo: string | null;
+    github: string;
+}
+
+export const projectsData: Project[] = [
+    {
+        id: "digital-bricks-management-system",
+        title: "Digital Bricks CMS",
+        description:
+            "Web-based management system for tracking and organizing digital assets, providing CRUD operations, role-based access, and reporting features.",
+        category: "Web",
+        tech: ["Spring Boot", "MySQL", "React", "PostgreSQL"],
+        image: "src/assets/dbms.png",
+        liveDemo: null,
+        github: "https://github.com/NemoDeFish/Digital-Bricks-Management-System",
+    },
+    {
+        id: "hifive-card-game",
+        title: "HiFive Card Game",
+        description:
+            "Digital card game built with Java featuring AI player behavior and OOP design principles.",
+        category: "Desktop",
+        tech: ["Java", "Game Development", "OOP", "Java2D", "AI"],
+        image: "src/assets/hifive-gameplay.png",
+        liveDemo: "/HiFive.zip",
+        github: "https://github.com/NemoDeFish/hifive-card-game",
+    },
+    {
+        id: "shadow-mario",
+        title: "Shadow Mario",
+        description:
+            "2D platformer game inspired by Mario, featuring custom levels, collision detection, and smooth player controls.",
+        category: "Desktop",
+        tech: ["Java", "Game Development", "Java2D", "OOP"],
+        image: "src/assets/gameplay.png",
+        liveDemo: "/ShadowMario.zip",
+        github: "https://github.com/NemoDeFish/shadow-mario",
+    },
+    {
+        id: "customer-loyalty-pos-sync",
+        title: "Customer Loyalty POS Sync",
+        description:
+            "System to sync loyalty points from MySQL POS database to MongoDB in real-time using Python and React.",
+        category: "Web",
+        tech: ["Python", "React", "MongoDB", "MySQL"],
+        image: "src/assets/loyalty.png",
+        liveDemo: "https://loyalty-app-uccv.onrender.com/",
+        github: "https://github.com/NemoDeFish/customer-loyalty-pos-sync",
+    },
+    {
+        id: "monte-carlo-tree-search-agent-tetress",
+        title: "Monte Carlo Tree Search Tetress Agent",
+        description:
+            "AI agent using Monte Carlo Tree Search to optimize gameplay strategy in Tetress.",
+        category: "AI",
+        tech: ["Python", "AI", "MCTS", "FastAPI", "React"],
+        image: "src/assets/playground.png",
+        liveDemo: "http://localhost:5173/mcts-tetress/",
+        github: "https://github.com/NemoDeFish/monte-carlo-tree-search-agent-tetress",
+    },
+    {
+        id: "a-star-search-for-single-player-tetress",
+        title: "A* Search Solver Tetress Agent",
+        description:
+            "A* search-based solver for Tetress to find optimal piece placements and maximize token elimination.",
+        category: "AI",
+        tech: ["Python", "A* Search", "AI", "FastAPI", "React"],
+        image: "src/assets/playground.png",
+        liveDemo: "http://localhost:5173/astar-tetress/",
+        github: "https://github.com/NemoDeFish/a-star-search-for-single-player-tetress",
+    },
+    {
+        id: "vit-two-phase-switching-opt",
+        title: "Two-phase Switching Optimization in Vision Transformer",
+        description:
+            "Exploring optimization techniques in Vision Transformers for efficient computation and improved model performance.",
+        category: "AI",
+        tech: ["PyTorch", "Computer Vision", "Deep Learning"],
+        image: "src/assets/vit.png",
+        liveDemo: null,
+        github: "https://github.com/NemoDeFish/vit-two-phase-switching-opt",
+    },
+    {
+        id: "web-proxy",
+        title: "Web Proxy",
+        description:
+            "Lightweight web proxy server that handles HTTP requests and responses, allowing request interception and modification for testing or security purposes.",
+        category: "Web",
+        tech: ["Node.js", "JavaScript", "HTTP", "Networking"],
+        image: "src/assets/proxy.jpeg",
+        liveDemo: null,
+        github: "https://github.com/NemoDeFish/web-proxy",
+    },
+];
+
+export const categories = [
+    { name: "All", icon: Sparkles },
+    { name: "Web", icon: Globe },
+    { name: "Desktop", icon: Monitor },
+    { name: "AI", icon: Cpu },
+];
