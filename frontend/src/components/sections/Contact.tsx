@@ -5,47 +5,17 @@ import {
     Send,
     User,
     MessageSquare,
-    Github,
-    Linkedin,
     Heart,
     ArrowUp,
     CheckCircle,
-    Code,
     Phone,
     Globe,
 } from "lucide-react";
 import SectionTitle from "../ui/SectionTitle";
 import SectionSubtitle from "../ui/SectionSubtitle";
 import FadeInWhenVisible from "../animations/FadeInWhenVisible";
-import { contactInfo } from "../../data/portfolio";
+import { name, contactInfo, socials } from "../../data/hero";
 import React from "react";
-
-const socialLinks = [
-    {
-        name: "GitHub",
-        icon: Github,
-        url: contactInfo.github,
-        gradient: "from-purple-500 to-pink-500",
-    },
-    {
-        name: "LinkedIn",
-        icon: Linkedin,
-        url: contactInfo.linkedin,
-        gradient: "from-blue-500 to-cyan-500",
-    },
-    {
-        name: "LeetCode",
-        icon: Code,
-        url: contactInfo.leetcode,
-        gradient: "from-orange-500 to-red-500",
-    },
-    {
-        name: "WhatsApp",
-        icon: Phone,
-        url: contactInfo.whatsapp,
-        gradient: "from-green-500 to-emerald-500",
-    },
-];
 
 const Contact = () => {
     const scrollToSection = (id: string) => {
@@ -341,7 +311,7 @@ const Contact = () => {
                         {/* Brand */}
                         <div className="md:w-[30%] text-center md:text-left">
                             <h3 className="text-2xl font-bold mb-3 bg-clip-text text-transparent bg-linear-to-r from-blue-400 to-purple-400">
-                                Your Name
+                                {name}
                             </h3>
                             <p className="text-gray-400 text-sm leading-relaxed font-light">
                                 Building digital experiences that make a
@@ -376,7 +346,7 @@ const Contact = () => {
                                                 <motion.button
                                                     onClick={() =>
                                                         scrollToSection(
-                                                            link.toLowerCase()
+                                                            link.toLowerCase(),
                                                         )
                                                     }
                                                     onTapStart={() =>
@@ -413,16 +383,28 @@ const Contact = () => {
                                 <h4 className="font-semibold mb-4">Connect</h4>
 
                                 <div className="flex flex-wrap justify-center md:justify-start gap-3">
-                                    {socialLinks.map((social) => {
+                                    {socials.map((social, index) => {
                                         const [isActive, setIsActive] =
                                             React.useState(false);
 
                                         return (
                                             <motion.a
-                                                key={social.name}
-                                                href={social.url}
-                                                target="_blank"
-                                                rel="noopener noreferrer"
+                                                key={index}
+                                                href={social.href ?? "#"}
+                                                target={
+                                                    social.href?.startsWith(
+                                                        "http",
+                                                    )
+                                                        ? "_blank"
+                                                        : undefined
+                                                }
+                                                rel={
+                                                    social.href?.startsWith(
+                                                        "http",
+                                                    )
+                                                        ? "noopener noreferrer"
+                                                        : undefined
+                                                }
                                                 // Scale on hover and tap
                                                 whileHover={{ scale: 1.05 }}
                                                 whileTap={{ scale: 1.05 }}
@@ -453,12 +435,12 @@ const Contact = () => {
                                                     }}
                                                 />
 
-                                                <social.icon
+                                                <social.Icon
                                                     size={18}
                                                     className="text-white relative z-10"
                                                 />
                                                 <span className="text-white font-medium text-sm relative z-10">
-                                                    {social.name}
+                                                    {social.label}
                                                 </span>
                                             </motion.a>
                                         );
@@ -476,7 +458,7 @@ const Contact = () => {
                                 size={14}
                                 className="text-red-500 fill-red-500 animate-pulse"
                             />{" "}
-                            © 2024 Your Name
+                            © {new Date().getFullYear()} {name}
                         </p>
 
                         <motion.button
