@@ -71,7 +71,7 @@ const CustomCursor: React.FC = () => {
                     })`,
                 }}
             >
-                <div className="w-2 h-2 bg-gray-700 rounded-full mix-blend-difference" />
+                <div className="w-2 h-2 bg-gray-700 dark:bg-gray-200 rounded-full mix-blend-difference" />
             </div>
 
             {/* Outer cursor ring */}
@@ -85,7 +85,7 @@ const CustomCursor: React.FC = () => {
                     })`,
                 }}
             >
-                <div className="w-8 h-8 border-2 border-gray-700 rounded-full mix-blend-difference" />
+                <div className="w-8 h-8 border-2 border-gray-700 dark:border-gray-200 rounded-full mix-blend-difference" />
             </div>
         </div>
     );
