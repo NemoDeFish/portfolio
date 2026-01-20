@@ -97,7 +97,7 @@ const HeroSection: React.FC = () => {
         setClickParticles((prev) => [...prev, newParticle]);
         setTimeout(() => {
             setClickParticles((prev) =>
-                prev.filter((p) => p.id !== newParticle.id)
+                prev.filter((p) => p.id !== newParticle.id),
             );
         }, 800);
 
@@ -300,8 +300,8 @@ const HeroSection: React.FC = () => {
                                             }
                                             src={
                                                 isLevelingUp
-                                                    ? "src/assets/2.svg"
-                                                    : "src/assets/1.svg"
+                                                    ? "src/assets/experience/power_up.svg"
+                                                    : "src/assets/experience/normal.svg"
                                             }
                                             alt="Hero"
                                             className="w-full h-full object-contain"

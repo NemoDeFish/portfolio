@@ -20,7 +20,7 @@ const rawAchievementsData = [
             "Given to the top final-year engineering student. Honed my technical expertise and leadership among peers.",
         date: "2023",
         category: "Academic",
-        image: "src/assets/achievements/iem-gold-medal.jpg",
+        image: "src/assets/achievements/iem-gold-medal.webp",
     },
     {
         id: "curtin-scholarship",
@@ -29,7 +29,7 @@ const rawAchievementsData = [
         description: "Scholarship for academic excellence.",
         date: "2020-2023",
         category: "Academic",
-        image: "src/assets/achievements/curtin-scholarship.jpg",
+        image: "src/assets/achievements/curtin-scholarship.webp",
     },
     {
         id: "eng-it-scholarship",
@@ -39,7 +39,7 @@ const rawAchievementsData = [
             "Recognizes outstanding achievement in engineering and IT.",
         date: "2024-2025",
         category: "Academic",
-        image: "src/assets/achievements/eng-it-scholarship.jpg",
+        image: "src/assets/achievements/eng-it-scholarship.webp",
     },
     {
         id: "john-balfour-scholarship",
@@ -49,7 +49,7 @@ const rawAchievementsData = [
             "For academic achievement and leadership. Motivated me to lead and inspire others in my field.",
         date: "2025-2026",
         category: "Academic",
-        image: "src/assets/achievements/john-balfour-scholarship.jpg",
+        image: "src/assets/achievements/john-balfour-scholarship.webp",
     },
     {
         id: "publication-deep-learning",
@@ -59,18 +59,17 @@ const rawAchievementsData = [
             "Published research on deep learning optimization. Sharpened my analytical and scientific writing skills.",
         date: "2023",
         category: "Academic",
-        image: "src/assets/achievements/publication-deep-learning.jpg",
+        image: "src/assets/achievements/publication-deep-learning.webp",
         link: "https://www.researchgate.net/publication/367079874_Second-order_Derivative_Optimization_Methods_in_Deep_Learning_Neural_Networks",
     },
     {
         id: "languages-fluency",
         title: "Certificate of Fluency",
         subtitle: "Fluent in 4 languages",
-        description:
-            "Fluent in four languages. Enhanced my cross-cultural communication and adaptability.",
+        description: "Fluent in English, Mandarin, Malay, and Cantonese.",
         date: "2026",
         category: "Academic",
-        image: "src/assets/achievements/languages-fluency.jpg",
+        image: "src/assets/achievements/languages-fluency.webp",
     },
     // Competition
     {
@@ -81,7 +80,7 @@ const rawAchievementsData = [
             "Recognizes strong problem-solving in competitive programming. Improved my coding speed and teamwork under pressure.",
         date: "2025",
         category: "Competition",
-        image: "src/assets/achievements/alluni-anz-6th.jpg",
+        image: "src/assets/achievements/alluni-anz-6th.webp",
     },
     {
         id: "iem-quiz-bowl-1st",
@@ -91,7 +90,7 @@ const rawAchievementsData = [
             "Awarded for winning a technical quiz competition. Strengthened my teamwork and technical problem-solving.",
         date: "2019",
         category: "Competition",
-        image: "src/assets/achievements/iem-quiz-bowl-1st.jpg",
+        image: "src/assets/achievements/iem-quiz-bowl-1st.webp",
     },
     // Certification
     {
@@ -102,7 +101,7 @@ const rawAchievementsData = [
             "Completed foundational networking certification. Gained practical knowledge in computer networks.",
         date: "2021",
         category: "Certification",
-        image: "src/assets/achievements/ccna-intro-networks.jpg",
+        image: "src/assets/achievements/ccna-intro-networks.webp",
     },
     // Leadership
     {
@@ -114,7 +113,7 @@ const rawAchievementsData = [
             "Served as Vice President, organizing events and initiatives. Enhanced my leadership and organizational skills.",
         date: "2022-2023",
         category: "Leadership",
-        image: "src/assets/achievements/iemsc-vp.jpg",
+        image: "src/assets/achievements/iemsc-vp.webp",
     },
     {
         id: "interact-president-treasurer",
@@ -124,7 +123,7 @@ const rawAchievementsData = [
             "Led and managed club activities and finances. Developed my leadership and financial management skills.",
         date: "2015-2016",
         category: "Leadership",
-        image: "src/assets/achievements/interact-president-treasurer.jpg",
+        image: "src/assets/achievements/interact-president-treasurer.webp",
     },
     {
         id: "gavel-president",
@@ -134,7 +133,7 @@ const rawAchievementsData = [
             "Led the Gavel Club to foster communication and leadership. Improved my mentoring and public speaking abilities.",
         date: "2014-2015",
         category: "Leadership",
-        image: "src/assets/achievements/gavel-president.jpg",
+        image: "src/assets/achievements/gavel-president.webp",
     },
     // Speaking
     {
@@ -145,7 +144,7 @@ const rawAchievementsData = [
             "Recognizes my role as speaker and emcee. Built my confidence and public speaking skills.",
         date: "2016-2017",
         category: "Speaking",
-        image: "src/assets/achievements/world-speech-day-speaker.jpg",
+        image: "src/assets/achievements/world-speech-day-speaker.webp",
     },
 ];
 

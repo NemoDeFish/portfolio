@@ -20,7 +20,7 @@ const experiences: Experience[] = [
             "Assisted students in mastering core engineering concepts",
             "Strengthened teaching, leadership, and technical communication skills",
         ],
-        image: "src/assets/tutor.jpg",
+        image: "src/assets/experience/tutor.webp",
     },
     {
         company: "Top Glove",
@@ -39,7 +39,7 @@ const experiences: Experience[] = [
             "Optimized purging system to reduce defective glove issues",
             "Stabilized acid/alkaline auto top-up systems within ±10% tolerance",
         ],
-        image: "src/assets/topglove.jpeg",
+        image: "src/assets/experience/topglove.webp",
     },
     {
         company: "Curtin University",
@@ -59,7 +59,7 @@ const experiences: Experience[] = [
             "Final Year Project: Two-phase Switching Optimization in Vision Transformer",
             "IEM Gold Medal Award for best final-year engineering student",
         ],
-        image: "src/assets/graduation.jpeg",
+        image: "src/assets/experience/graduation.webp",
     },
 
     {
@@ -79,7 +79,7 @@ const experiences: Experience[] = [
             "Reviewed and analyzed AI-generated solutions for correctness, efficiency, and best practices",
             "Collaborated asynchronously with global AI research labs on large-scale systems projects",
         ],
-        image: "src/assets/llm.jpg",
+        image: "src/assets/experience/llm.webp",
     },
     {
         company: "The University of Melbourne",
@@ -98,7 +98,7 @@ const experiences: Experience[] = [
             "First Class Honours (WAM: 84.25 / 100)",
             "Strong focus on scalable, reliable, and AI-driven systems",
         ],
-        image: "src/assets/about1.webp",
+        image: "src/assets/about/about1.webp",
     },
 ];
 

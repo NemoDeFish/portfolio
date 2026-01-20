@@ -73,7 +73,7 @@ const Navigation: React.FC = () => {
                     className="flex items-center"
                 >
                     <img
-                        src="src/assets/logo.png"
+                        src="src/assets/hero/logo.png"
                         alt="Logo"
                         className="ml-2 h-15 md:h-18 landscape:h-14 md:landscape:h-15 xl:landscape:h-20 2xl:landscape:h-15 p-2 w-auto dark:invert"
                     />

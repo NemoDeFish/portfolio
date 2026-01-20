@@ -33,3 +33,27 @@ export const aboutStats = [
     },
     { icon: Users, number: "Agile", label: "Team Experience" },
 ];
+
+// Replace these with your actual images
+export const images = [
+    {
+        src: "src/assets/about/about1.webp",
+        alt: "Coding workspace",
+    },
+    {
+        src: "src/assets/about/about2.webp",
+        alt: "Developer at work",
+    },
+    {
+        src: "src/assets/about/about3.webp",
+        alt: "Code on screen",
+    },
+    {
+        src: "src/assets/about/about4.webp",
+        alt: "Team collaboration",
+    },
+    {
+        src: "src/assets/about/about5.webp",
+        alt: "Tech meetup",
+    },
+];

@@ -100,7 +100,7 @@ export const skillsData: SkillsData = {
             name: "MERN Stack",
             description:
                 "MongoDB, Express.js, React, Node.js full-stack development.",
-            logo: "src/assets/mern.png", // Example icon, you can use a custom one
+            logo: "src/assets/skills/mern.webp", // Example icon, you can use a custom one
             color: "#3FA037",
             proficiency: "Expert",
             bannerColor: "bg-gray-50",
@@ -110,7 +110,7 @@ export const skillsData: SkillsData = {
             name: "Machine Learning Stack",
             description:
                 "Python, NumPy, Pandas, Scikit-learn, TensorFlow/PyTorch for building AI/ML models.",
-            logo: "src/assets/ml.jpg", // Keep your custom icon or replace with an AI/ML icon
+            logo: "src/assets/skills/ml.webp", // Keep your custom icon or replace with an AI/ML icon
             color: "#FF6F61", // A different color to distinguish it from web stacks
             proficiency: "Expert",
             bannerColor: "bg-white",

@@ -4,35 +4,11 @@ import { MousePointerClick } from "lucide-react";
 import FadeInWhenVisible from "../animations/FadeInWhenVisible";
 import SectionTitle from "../ui/SectionTitle";
 import SectionSubtitle from "../ui/SectionSubtitle";
-import { aboutText, aboutStats } from "../../data/about";
+import { aboutText, aboutStats, images } from "../../data/about";
 
 const bounceEase = [0.34, 1.56, 0.64, 1] as any;
 
 const About: React.FC = () => {
-    // Replace these with your actual images
-    const images = [
-        {
-            src: "src/assets/about1.webp",
-            alt: "Coding workspace",
-        },
-        {
-            src: "src/assets/about2.webp",
-            alt: "Developer at work",
-        },
-        {
-            src: "src/assets/about3.webp",
-            alt: "Code on screen",
-        },
-        {
-            src: "src/assets/about4.webp",
-            alt: "Team collaboration",
-        },
-        {
-            src: "src/assets/about5.webp",
-            alt: "Tech meetup",
-        },
-    ];
-
     const spanClasses = [
         "col-span-2 row-span-3",
         "col-span-2 row-span-4",
@@ -84,30 +60,6 @@ const About: React.FC = () => {
                             {/* CSS Grid Collage */}
                             <div className="grid grid-cols-4 grid-rows-6 gap-2 h-112.5">
                                 {images.map((img, idx) => {
-                                    let rowSpan = 2,
-                                        colSpan = 2;
-                                    // Set specific sizes for each image
-                                    if (idx === 0) {
-                                        rowSpan = 3;
-                                        colSpan = 2;
-                                    }
-                                    if (idx === 1) {
-                                        rowSpan = 4;
-                                        colSpan = 2;
-                                    }
-                                    if (idx === 2) {
-                                        rowSpan = 2;
-                                        colSpan = 2;
-                                    }
-                                    if (idx === 3) {
-                                        rowSpan = 2;
-                                        colSpan = 2;
-                                    }
-                                    if (idx === 4) {
-                                        rowSpan = 1;
-                                        colSpan = 2;
-                                    }
-
                                     return (
                                         <div
                                             key={idx}
