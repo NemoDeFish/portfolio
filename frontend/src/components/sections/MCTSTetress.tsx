@@ -173,13 +173,15 @@ const TETROMINOES: Record<TetrominoName, TetrominoData> = {
 
 const TetressGame = () => {
     const [dontShowAgain, setDontShowAgain] = useState<boolean>(false);
+    const API_URL = import.meta.env.VITE_API_URL || "http://localhost:8000";
+
     // Helper: wrap coordinate (toroidal board)
     const wrap = (coord: number): number => ((coord % 11) + 11) % 11;
 
     // Helper: get current shape for selected piece
     const getCurrentShape = (
         piece: TetrominoName,
-        rotation: number
+        rotation: number,
     ): Coordinate[] => {
         const shapes = TETROMINOES[piece].shapes;
         return shapes[rotation % shapes.length];
@@ -190,7 +192,7 @@ const TetressGame = () => {
         piece: TetrominoName,
         r: number,
         c: number,
-        rotation: number
+        rotation: number,
     ): boolean => {
         const shape = getCurrentShape(piece, rotation);
         const coords: Coordinate[] = shape.map(([dr, dc]: [number, number]) => [
@@ -206,7 +208,7 @@ const TetressGame = () => {
 
         // Check adjacency to same color cell (except for first move)
         const playerCellCount = Object.values(board).filter(
-            (v) => v === currentPlayer
+            (v) => v === currentPlayer,
         ).length;
         if (playerCellCount === 0) {
             // First move, no adjacency required
@@ -239,7 +241,7 @@ const TetressGame = () => {
     const [board, setBoard] = useState<BoardState>({});
     const [currentPlayer, setCurrentPlayer] = useState<Player>("red");
     const [selectedPiece, setSelectedPiece] = useState<TetrominoName | null>(
-        null
+        null,
     );
     const [selectedRotation, setSelectedRotation] = useState<number>(0);
     const [gameOver, setGameOver] = useState<boolean>(false);
@@ -263,7 +265,7 @@ const TetressGame = () => {
 
     const startNewGame = async () => {
         try {
-            const response = await fetch("http://localhost:8000/api/new-game", {
+            const response = await fetch(`${API_URL}/api/new-game`, {
                 method: "POST",
             });
 
@@ -284,7 +286,7 @@ const TetressGame = () => {
         } catch (error) {
             console.error("Error starting new game:", error);
             alert(
-                "Failed to start new game. Make sure the backend is running."
+                "Failed to start new game. Make sure the backend is running.",
             );
         }
     };
@@ -312,7 +314,7 @@ const TetressGame = () => {
         piece: TetrominoName,
         r: number,
         c: number,
-        rotation: number
+        rotation: number,
     ) => {
         if (!gameId || currentPlayer !== "red" || gameOver) return;
 
@@ -334,20 +336,17 @@ const TetressGame = () => {
 
         try {
             // 1. Send player move
-            const response = await fetch(
-                "http://localhost:8000/api/player-move",
-                {
-                    method: "POST",
-                    headers: { "Content-Type": "application/json" },
-                    body: JSON.stringify({
-                        game_id: gameId,
-                        piece,
-                        r,
-                        c,
-                        rotation,
-                    }),
-                }
-            );
+            const response = await fetch(`${API_URL}/api/player-move`, {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({
+                    game_id: gameId,
+                    piece,
+                    r,
+                    c,
+                    rotation,
+                }),
+            });
 
             if (!response.ok) throw new Error("Move failed");
 
@@ -375,16 +374,13 @@ const TetressGame = () => {
             }
 
             // 2. Ask backend for AI move
-            const aiResponse = await fetch(
-                "http://localhost:8000/api/ai-move",
-                {
-                    method: "POST",
-                    headers: { "Content-Type": "application/json" },
-                    body: JSON.stringify({
-                        game_id: gameId,
-                    }),
-                }
-            );
+            const aiResponse = await fetch(`${API_URL}/api/ai-move`, {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({
+                    game_id: gameId,
+                }),
+            });
             if (!aiResponse.ok) throw new Error("AI move failed");
             const aiData = await aiResponse.json();
             updateGameState(aiData);
@@ -435,7 +431,7 @@ const TetressGame = () => {
                 setSelectedRotation((selectedRotation + 1) % shapes.length);
             } else {
                 setSelectedRotation(
-                    (selectedRotation - 1 + shapes.length) % shapes.length
+                    (selectedRotation - 1 + shapes.length) % shapes.length,
                 );
             }
         }
@@ -472,7 +468,7 @@ const TetressGame = () => {
                                 {(
                                     Object.entries(TETROMINOES) as [
                                         TetrominoName,
-                                        TetrominoData
+                                        TetrominoData,
                                     ][]
                                 ).map(([name, data]) => (
                                     <button
@@ -519,7 +515,7 @@ const TetressGame = () => {
                                                         data.shapes[0].some(
                                                             ([pr, pc]) =>
                                                                 pr === r &&
-                                                                pc === c
+                                                                pc === c,
                                                         );
                                                     return (
                                                         <div
@@ -541,7 +537,7 @@ const TetressGame = () => {
                                                             }}
                                                         />
                                                     );
-                                                }
+                                                },
                                             )}
                                         </div>
                                     </button>
@@ -559,7 +555,7 @@ const TetressGame = () => {
                                     const shapes =
                                         TETROMINOES[selectedPiece].shapes;
                                     setSelectedRotation(
-                                        (selectedRotation + 1) % shapes.length
+                                        (selectedRotation + 1) % shapes.length,
                                     );
                                 }
                             }}
@@ -680,7 +676,7 @@ const TetressGame = () => {
                                 const key = `${r},${c}`;
                                 const tile = board[key];
                                 const isPreview = preview.coords.some(
-                                    ([pr, pc]) => pr === r && pc === c
+                                    ([pr, pc]) => pr === r && pc === c,
                                 );
 
                                 return (
@@ -709,8 +705,8 @@ const TetressGame = () => {
                                                     tile
                                                         ? "bg-yellow-400/60" // Show yellow overlay on occupied cells
                                                         : preview.valid
-                                                        ? "bg-red-400/40" // Show red on valid empty cells
-                                                        : "bg-gray-400/40" // Show grey on invalid empty cells
+                                                          ? "bg-red-400/40" // Show red on valid empty cells
+                                                          : "bg-gray-400/40" // Show grey on invalid empty cells
                                                 }`}
                                                 style={{
                                                     pointerEvents: "none",
@@ -810,7 +806,7 @@ const TetressGame = () => {
                                 if (dontShowAgain) {
                                     localStorage.setItem(
                                         "tetress_seen_help",
-                                        "1"
+                                        "1",
                                     );
                                 }
                                 setShowHelp(false);
