@@ -16,7 +16,7 @@ const ASTetressNavigation: React.FC<ASTetressNavigationProps> = ({
                 {/* Logo and Title */}
                 <div className="flex items-center gap-3">
                     <img
-                        src="/src/assets/logo.png"
+                        src="/logo.png"
                         alt="Logo"
                         className="h-10 w-auto dark:invert"
                         style={{ userSelect: "none" }}
