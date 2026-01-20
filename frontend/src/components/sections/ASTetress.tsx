@@ -104,7 +104,7 @@ const TetressDemo = () => {
 
         try {
             // Generalize to fetch the JSON file based on selected test case name
-            const jsonPath = `/astar_replays/${selectedTest}.json`;
+            const jsonPath = `/projects/astar_replays/${selectedTest}.json`;
             const response = await fetch(jsonPath);
             if (!response.ok) throw new Error("Failed to load replay JSON");
             const replayData = await response.json();
@@ -129,7 +129,7 @@ const TetressDemo = () => {
             setError(
                 err instanceof Error
                     ? err.message
-                    : "Failed to load replay JSON."
+                    : "Failed to load replay JSON.",
             );
             console.error(err);
         } finally {
@@ -371,7 +371,7 @@ const TetressDemo = () => {
                                 if (dontShowAgain) {
                                     localStorage.setItem(
                                         "astetress_seen_help",
-                                        "1"
+                                        "1",
                                     );
                                 }
                                 setShowHelp(false);
@@ -447,9 +447,9 @@ const TetressDemo = () => {
                                     {isPlaying
                                         ? "Pause"
                                         : currentStateIndex >=
-                                          searchStates.length - 1
-                                        ? "Replay"
-                                        : "Play"}
+                                            searchStates.length - 1
+                                          ? "Replay"
+                                          : "Play"}
                                 </button>
                                 <button
                                     onClick={handleReset}
@@ -492,7 +492,7 @@ const TetressDemo = () => {
                                     value={currentStateIndex}
                                     onChange={(e) => {
                                         setCurrentStateIndex(
-                                            parseInt(e.target.value)
+                                            parseInt(e.target.value),
                                         );
                                         setIsPlaying(false);
                                         setCurrentSolutionStep(-1);
@@ -559,8 +559,8 @@ const TetressDemo = () => {
                                                         (prev) =>
                                                             Math.max(
                                                                 0,
-                                                                prev - 1
-                                                            )
+                                                                prev - 1,
+                                                            ),
                                                     );
                                                     setShowFullSolution(false);
                                                 }}
@@ -579,8 +579,8 @@ const TetressDemo = () => {
                                                             Math.min(
                                                                 solutionSteps.length -
                                                                     1,
-                                                                prev + 1
-                                                            )
+                                                                prev + 1,
+                                                            ),
                                                     );
                                                     setShowFullSolution(false);
                                                 }}

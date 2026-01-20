@@ -300,8 +300,8 @@ const HeroSection: React.FC = () => {
                                             }
                                             src={
                                                 isLevelingUp
-                                                    ? "src/assets/experience/power_up.svg"
-                                                    : "src/assets/experience/normal.svg"
+                                                    ? "/assets/experience/power_up.svg"
+                                                    : "/assets/experience/normal.svg"
                                             }
                                             alt="Hero"
                                             className="w-full h-full object-contain"

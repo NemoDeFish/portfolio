@@ -74,7 +74,7 @@ const Hero: React.FC = () => {
               shadow-2xl transition-colors"
                     >
                         <img
-                            src="src/assets/hero/avatar.webp"
+                            src="/assets/hero/avatar.webp"
                             alt={name}
                             className="w-full h-full object-cover rounded-full object-top"
                         />
