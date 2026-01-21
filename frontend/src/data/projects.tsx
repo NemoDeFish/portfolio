@@ -20,7 +20,7 @@ export const projectsData: Project[] = [
         category: "Web",
         tech: ["Spring Boot", "MySQL", "React", "PostgreSQL"],
         image: "/assets/projects/dbms.webp",
-        liveDemo: null,
+        liveDemo: "https://digital-bricks-management-system.onrender.com/",
         github: "https://github.com/NemoDeFish/Digital-Bricks-Management-System",
     },
     {
