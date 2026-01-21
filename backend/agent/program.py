@@ -74,7 +74,7 @@ class Agent:
         tree = MonteCarloTreeSearch()
         
         # Run MCTS algorithm
-        num_simulations = 400
+        num_simulations = 200
         for _ in range(num_simulations):
             tree.do_rollout(board)
         
